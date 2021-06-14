@@ -317,7 +317,7 @@ switch (command) {
       year: 'numeric'
     })
     	var menu = `Yo🤚 ${pushname}\n
-*Prefix :* 「 ${prefix} 」
+*Prefix :* 「 *MULTI PREFIX* 」
 *Jam :* 「 ${time} 」
 *Hari :* 「 ${week} ${weton} 」
 *Tanggal :* 「 ${date} 」
