@@ -60,6 +60,7 @@ fake = 'Levia☆tan'
 numbernye = '0'
 waktu = '-'
 alasan = '-'
+git = 'https://github.com/serafallleviathan/self'
 //=================================================//
 module.exports = hexa = async (hexa, mek) => {
 	try {
@@ -75,7 +76,7 @@ module.exports = hexa = async (hexa, mek) => {
 		const time = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             const type = Object.keys(mek.message)[0]        
             const cmd = (type === 'conversation' && mek.message.conversation) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text ? mek.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
-            const prefix = /^[.]/.test(cmd) ? cmd.match(/^[.]/gi) : '.'          	
+            const prefix = /^[.,?!*/+-&_$#@><\^×÷•~]/.test(cmd) ? cmd.match(/^[.,?!*/+-&_$#@><\^×÷•~]/gi) : '.'          	
         	body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
 		budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
 		const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()		
@@ -106,15 +107,15 @@ module.exports = hexa = async (hexa, mek) => {
 
         //MESS
 		mess = {
-			wait: 'sabar...',
-			success: 'ok...',
-			wrongFormat: 'salah, jajal deleng meneh ning menu',
+			wait: 'wait...',
+			success: 'succes...',
+			wrongFormat: 'salah, coba lihat lagi di menu',
 			error: {
-				stick: 'udu setiker:v',
-				Iv: 'ora dadi:v'
+				stick: 'bukan setiker:v',
+				Iv: 'gagal:v'
 			},
 			only: {
-				group: 'mung ning grup',
+				group: 'khusus grup',
 			}
 		}
 		const isUrl = (url) => {
@@ -283,19 +284,19 @@ switch(is) {
 
   case 'bot':
 
-buf = 'tulis .help nek deleng menu'
+buf = 'ketik .help untuk menu'
 reply(buf)
 break
 
 case '.':
   case '*':
     case '!':
-hasil = `tulis ${prefix}help nek deleng menu`
+hasil = `ketik ${prefix}help untuk menu`
 reply(hasil)
         break
 case 'help':
 
-hasil = `tulis ${prefix}help nek deleng menu`
+hasil = `ketik ${prefix}help untuk menu`
 
 reply(hasil)
         break
@@ -303,7 +304,7 @@ reply(hasil)
 
 
 switch (command) {
-    case '?':
+    case 'menu':
     case 'help':
             run = process.uptime() 
 					    d = new Date
@@ -322,6 +323,7 @@ switch (command) {
 *Hari :* 「 ${week} ${weton} 」
 *Tanggal :* 「 ${date} 」
 *Run Time :* 「 ${kyun(run)} 」
+*Github :* 「 ${git} 」
 
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 *</OWNER>*
@@ -358,7 +360,6 @@ switch (command) {
 ► _${prefix}kontak_
 ► _${prefix}jadwalanime_
 ► _${prefix}sarananime_
-► _${prefix}joined_
 
 *</TAG>*
 ► _${prefix}hidetag_
@@ -410,7 +411,7 @@ switch (command) {
 ► _${prefix}join_
 ► _${prefix}get_
 ► _${prefix}term_ <code>
-► _×_ <code>
+► _x_ <code>
 
 ❏ *Levia☆tan* ❏`
         	fakestatus(menu)
@@ -432,7 +433,7 @@ switch (command) {
             fakestatus(' ```OFFLINE``` ')
             break   
     case 'get':
-            if(!q) return reply('link.e ndi su?')
+            if(!q) return reply('linknya mana kak?')
             fetch(`${args[0]}`).then(res => res.text())  
             .then(bu =>{
             fakestatus(bu)
@@ -577,7 +578,7 @@ switch (command) {
             await hexa.deleteMessage(jids, { id: responye.messageID, remoteJid: jids, fromMe: true })
             break
     case 'tomp3':
-            if (!isQuotedVideo) return fakegroup('Reply videone!')
+            if (!isQuotedVideo) return fakegroup('Reply videonya!')
             fakegroup(mess.wait)
             encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
             media = await hexa.downloadAndSaveMediaMessage(encmedia)
@@ -605,7 +606,7 @@ switch (command) {
             })
             break
     case 'slow':
-            if (!isQuotedVideo) return fakegroup('Reply videone!')
+            if (!isQuotedVideo) return fakegroup('Reply videonya!')
             fakegroup(mess.wait)
             encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
             media = await hexa.downloadAndSaveMediaMessage(encmedia)
@@ -619,7 +620,7 @@ switch (command) {
             })
             break
     case 'reverse':
-            if (!isQuotedVideo) return fakegroup('Reply kalimate!')
+            if (!isQuotedVideo) return fakegroup('Reply kalimatnya!')
             encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
             media = await hexa.downloadAndSaveMediaMessage(encmedia)
             ran = getRandom('.mp4')
@@ -805,7 +806,7 @@ switch (command) {
           	fakestatus(`「 *SELF-MODE* 」`)
           	break
  	case 'hidetag':
-			if (!mek.key.fromMe) return fakestatus('mung aku sing teyeng:v')
+			if (!mek.key.fromMe) return fakestatus('cuma aku yang bisa:v')
 			if (!isGroup) return reply(mess.only.group)
 			var value = args.join(' ')
 			var group = await hexa.groupMetadata(from)
@@ -822,7 +823,7 @@ switch (command) {
 			hexa.sendMessage(from, optionshidetag, text)
 			break
 	case 'play':
-			if (args.length === 0) return reply(`tulis *${prefix}play* _judule_`)
+			if (args.length === 0) return reply(`ketik *${prefix}play* _judulnya_`)
             var srch = args.join('')
     		aramas = await yts(srch);
     		aramat = aramas.all 
@@ -844,7 +845,7 @@ switch (command) {
                         }
                    break  
         case 'video':
-            if (args.length === 0) return reply(`tulis *${prefix}video* _Judule_`)
+            if (args.length === 0) return reply(`ketik *${prefix}video* _Judulnya_`)
             var srch = args.join('')
             aramas = await yts(srch);
             aramat = aramas.all 
@@ -922,21 +923,21 @@ switch (command) {
             }
             break               
     case 'toimg':
-			if (!isQuotedSticker) return reply('reply setikere su!')
+			if (!isQuotedSticker) return reply('reply setikernya kak!')
 			reply(mess.wait)
 			encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 			media = await hexa.downloadAndSaveMediaMessage(encmedia)
 			ran = getRandom('.png')
 			exec(`ffmpeg -i ${media} ${ran}`, (err) => {
 			fs.unlinkSync(media)
-			if (err) return reply('gag')
+			if (err) return reply('gagal')
 			buffer = fs.readFileSync(ran)
 			fakethumb(buffer,'Eh...>_<\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Tapi boong:v')
 			fs.unlinkSync(ran)
 			})
 			break
 	case 'ytsearch':
-			if (args.length < 1) return reply('arep golet opo su?')
+			if (args.length < 1) return reply('mau nyari apa kak?')
 			var srch = args.join('');
 			try {
         	var aramas = await yts(srch);
@@ -959,35 +960,35 @@ switch (command) {
 			break
 	case 'setreply':
 	case 'setfake':
-			if (!mek.key.fromMe) return fakestatus('mung aku sing teyeng:v')
+			if (!mek.key.fromMe) return fakestatus('cuma aku yang bisa:v')
 			if (!q) return fakegroup(mess.wrongFormat)
 			fake = q
-			fakegroup(`wes dadi : ${q}`)
+			fakegroup(`telah menjadi : ${q}`)
 			break
 	case 'setfakeimg':
- 			if (!mek.key.fromMe) return fakestatus('mung aku sing teyeng:v')
+ 			if (!mek.key.fromMe) return fakestatus('cuma aku yang bisa:v')
         	if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length == 0) {
           	boij = isQuotedImage || isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 			delb = await hexa.downloadMediaMessage(boij)
 			fs.writeFileSync(`./stik/fake.jpeg`, delb)
 			fakestatus('Sukses')
         	} else {
-            reply(`Kirim gambar karo tulisan ${prefix}sethumb`)
+            reply(`Kirim gambar dengan caption ${prefix}sethumb`)
           	}
 			break	
 	case 'setthumb':
-			if (!mek.key.fromMe) return fakestatus('mung aku sing teyeng:v')
+			if (!mek.key.fromMe) return fakestatus('cuma aku yang bisa:v')
 	        if ((isMedia && !mek.message.videoMessage || isQuotedImage || isQuotedSticker) && args.length == 0) {
           	boij = isQuotedImage || isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 			delb = await hexa.downloadMediaMessage(boij)
 			fs.writeFileSync(`./stik/thumb.jpeg`, delb)
 			fakestatus('Sukses')
         	} else {
-            reply(`Kirim gambar karo tulisan ${prefix}sethumb`)
+            reply(`Kirim gambar dengan caption ${prefix}sethumb`)
           	}
 			break	
 	case 'ytmp4':
-			if (args.length === 0) return reply(`tulis *${prefix}ytmp4 [link.e]*`)
+			if (args.length === 0) return reply(`ketik *${prefix}ytmp4 [linknya]*`)
 			let isLinks2 = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 			if (!isLinks2) return reply(mess.error.Iv)
 				try {
@@ -1017,7 +1018,7 @@ switch (command) {
    			})
     		break
 	case 'ytmp3':
-			if (args.length === 0) return reply(`tulis *${prefix}ytmp3 [link.e]*`)
+			if (args.length === 0) return reply(`ketik *${prefix}ytmp3 [linknya]*`)
 			let isLinks = args[0].match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/)
 			if (!isLinks) return reply(mess.error.Iv)
 				try {
@@ -1049,7 +1050,7 @@ switch (command) {
             break
  	case 'tiktok':
  		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
- 		if (!q) return fakegroup('Link.e ndi su?')
+ 		if (!q) return fakegroup('Linknya mana kak?')
  		reply(mess.wait)
 		tik.ssstik(`${args[0]}`)
     		.then(result => {
@@ -1065,7 +1066,7 @@ switch (command) {
      		break
     case 'tiktokaudio':
  		if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply(mess.Iv)
- 		if (!q) return fakegroup('Link.e ndi su?')
+ 		if (!q) return fakegroup('Linknya mana kak?')
  		reply(mess.wait)
  		tik.ssstik(`${args[0]}`)
     		.then(result => {
@@ -1075,7 +1076,7 @@ switch (command) {
      		.catch(e => console.log(e))
      		break
     case 'brainly':
-			if (args.length < 1) return reply('takon opo')
+			if (args.length < 1) return reply('tanya apa')
           	brien = args.join(' ')
 			brainly(`${brien}`).then(res => {
 			teks = '❉───────────────────────❉\n'
@@ -1087,7 +1088,7 @@ switch (command) {
 			break
     case 'ig':
         if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply(mess.Iv)
-        if (!q) return fakegroup('Link.e ndi su?')
+        if (!q) return fakegroup('Linknya mana kak?')
         reply(mess.wait)
 	    igdl(args[0])
 	    .then(async(result) => {
@@ -1112,7 +1113,7 @@ switch (command) {
             })      
             break    
     case 'fb':
-            if (!q) return reply('Link.e ndi su?')
+            if (!q) return reply('Linknya mana kak?')
             if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply(mess.Iv)
             reply(mess.wait)
             te = args.join(' ')
@@ -1185,11 +1186,6 @@ case 'ss': case 'ssweb':
 					pok = await getBuffer(nimek)
 					hexa.sendMessage(from, pok, image, { quoted: mek, caption: `*⟪ PINTEREST ⟫*`})
 					break 
-				case 'joined':
-				const join =[`\nlink Group *アニメAnime ongoing進行中*\nhttps://chat.whatsapp.com/IMKxDcSDQY5HZZDwuqmnwG\n\nlink Group *WʜᴀᴛsAᴘᴘCᴏᴅᴇ⁴̅⁰͍³*\nhttps://chat.whatsapp.com/GoeN14sgjIJJxo2Ywmd6Cm\n\nlink Group *🏮A•L•Q•A•N•I•M•E🏮*\nhttps://chat.whatsapp.com/Dq2wtpNxvTx48otEOTdTrk\n\nlink Group *✯MANGA✯ANIME✯SHARE✯*\nhttps://chat.whatsapp.com/DUL40UUkxcA1bZxnVgwy2v\n\nlink Group *Tets*\nhttps://chat.whatsapp.com/LBH1mMGIcaTAJ4QohezgLE\n\nlink Group *NewOveLions(NoL)*\nhttps://chat.whatsapp.com/CA2baBVtIc3E2gFuqyMiTr\n\nlink Group *(File) 🎀  𝒥𝒶𝓅𝒶𝓃𝒾𝓂𝑒 𝐼𝒟  🎀*\nhttps://chat.whatsapp.com/IPgNodaSCRB01hF45ofPwG\n\nlink Group *(File) 🎀  𝒥𝒶𝓅𝒶𝓃𝒾𝓂𝑒 𝐼𝒟  🎀 2*\nhttps://chat.whatsapp.com/KEBUb5trpGKFWk0WUMvJZR\n\nlink Group *^ANIME SPRING 2021^ 0.1*\nhttps://chat.whatsapp.com/IaRfpkw1n7L2idMR00DQ50\n\nlink Group *^ANIME SPRING 2021^ 0.2*\nhttps://chat.whatsapp.com/J8GU2xmYME491Ohlol6O51\n\nlink Group *^ANIME SPRING 2021^ 0.3*\nhttps://chat.whatsapp.com/IKjonEcIQkC02NQTadiKvZ\n\n❏ *Levia☆tan* ❏`]
-					srn = await getBuffer(`https://telegra.ph/file/6060ca0d0e9648aaa97e6.jpg`)
-					hexa.sendMessage(from, srn, image, { quoted: mek, caption: '*LIST GRUP JOINED*\n'+ join })
-					break
 		case 'sarananime':
 					const saran =[`anime romance dimana heroine nya awalnya di benci kemudian jatuh cinta\n°Fuuka\n°Masamune's Revenge\n°Sousei no Onmyouji\n°Oda Nobuna no Yabou\n°Kaze no Stigma\n°Btooom!\n°Tonari no Kaibutsu-kun\n°Akame ga Kill\n°Kaichou wa Maid-sama!\n°Nisekoi\n____________________________\nAnime dimana MC ke Isekai dan mendapatkan kekuatan OP\n°Isekai wa Smartphone to Tomo ni\n°Isekai Maou to Shokan Shoujo no Dorei Majutsu\n°Arifureta Shokugyo de Sekai Saikyou\n°Maou-sama, Retry!\n°Hataraku Maou-sama\n°Drifter\n°Yojou Senki\n°Tensei Shitara Slime Datta Ken\n°No Game No Life\n____________________________\nTop Anime Romance/Action\n°Beatless\n°Kishuku Gakkou no Juliet\n°Devil Line\n°Toaru Hikuushi e no Koiuta\n°Shuumatsu Nani Shitemasu ka? Isogashii Desu ka? Sukutte Moratte Ii desu ka?\n____________________________\nAnime dimana MC OP tidak mengetahui kekuatan sebenarnya\n°Dakara Boku wa, H ga Dekinai\n°Tokyo Ravens\n°Kore wa Zombie desu ka?\n°Maoyuu Maou Yuusha\n°Blood Lad\n°Musaigen no Phantom World\n°Witch Craft Works\n____________________________\nAnime dimana MC OP tapi tidak dapat mengendalikan kekuatannya\n°Sousei no Onmyouji\n°Bungo Stray Dogs\n°Owari no Seraph\n°Kyoukai no Kanata\n°Mushibugyo\n____________________________\nBest Anime Romance \n°Love Lab\n°Noucome\n°Inou-Battle wa Nichijou-Kei no Naka de\n°Boku wa Tomodachi ga Sukunai\n°Kono Bijutsubu ni wa Mondai ga Aru!\n°Just Because!\n°Mayo Chiki!\n°Mikakunin de Shinkoukei\n°Sankarea\n°Oda\n°Seiren\n°3D kanojo\n______________________________\nTop anime MC kalem/badass\n°Amnesia\n°Angel Beats!\n°Tokyo Ghoul\n°Darling in the FranXX\n°Golden Time\n_____________\nTop 10 Harem dan MC over power\n°Maji de Watashi Ni Koi Shinasai!\n°Hagure Yuusha no Aesthetica\n°Busou Shoujo Machiavellianism\n°Hidan no Aria\n°Seiken Tsukai no World Break\n°Hundred\n°Masou Gakuen HXH\n°Highschool DxD\n°Seikon no Qwaser\n°Inou-Battle Nichijou-Kei no Naka de\n____________________________\nTop Harem MC OP\n°IS: Infinite Stratos\n°Campione!n°Kore wa Zombie Desu ka?\n°Trinity Seven\n°Yuragi-sou no Yuuna-san\n°Sin: Nanatsu no Taizai\n°Neon Genesis Evangelion\n°Hello World\n°Recently, My sister is unusual\n•Vampire Knight\n____________________________\nTop Anime MC ngebangkitkan kekuatannya\n°Hitsugi no Chaika\n°Tsubasa Chronicle\n°Fate/Stay Night\n°Seiken no Blacksmith\n°Absolute Duo\n°Dakara Boku wa, H ga Dekinai\n°Mahou Sensou\n____________________________\nTop Anime with anti sosial & OP MC\n°Goblin Slayer\n°No Game No Life\n°Grisaia no Kajitsu\n°Jormungand\n°Classroom of the Elite\n°Saiki Kusou no Psi Nan\n____________________________\nTop anime MC badas\n°Drifters\n°Kara no Kyoukai\n°Kino no Tabi\n°Darker than Black\n°Grisaia Series\n°Fate/Zero\n____________________________\nTop Anime MC pura² lemah padahal kuat\n°Blood Lad\n°Rokudenashi Majutsu Koushitsu\n°Saiki Kusou no Psi Nan\n°Classroom of the Elite\n____________________________\nTop anime with OP MC (2019)\n°Isekai Cheat Magician\n°Arifureta Shokugyo Sekai ni Saikyou\n°Maou-sama, Retry!\n°Katsute Kami Datta Kemono-tachi e\n°Toaru Kagaku no Accelerator\n°Kenja no Mago\n°Vinland Saga\n°Tate no Yuusha no Nariagari\n°Dr. Stone\n____________________________\nTop anime MC abadi\n°Itsuka Tenma no Kuro Usagi\n°UQ Holder\n°Renai Boukun\n°Kuroshitsuji\n°Sayonara no Asa\n°Re:Zero Kara Hajimeru Isekai Seikatsu\n____________________________\nTop anime dimana MC dikhianati dan jatuh ke jalan gelap\n°Arifureta Shokugyo Sekai ni Saikyou\n°Guilty Crown\n°Akame ga Kill\n°Zetsuen no Tempest\n°Ao no Excorcist\n°Densetsu no Yuusha no Densetsu\n°91 Days\n°Tate no Yuusha no Nariagari\n°Shinsekai Yori\n°Btooom!\n°Mawaru Penguindrum\n____________________________\nTop anime MC terlihat malas tapi OV/badass\n°Densetsu no Yuusha no Densetsu\n°Rokudenashi Majutsu Koushitsu\n°Zetsuen no Tempest\n°Nejimaki Seirei Senki: Tenkyou no Alderamin\n°Gate\n°Hyouka\n°Gintama\n____________________________\nTop Anime yang MC-nya adalah legenda pensiunan yang kembali lagi\n°Accel World\n°Noragami\n°Shuumatsu Nani Shitemasu ka?\n°Yuushibu\n°Rokudenashi Majutsu Koushitsu\n°Densetsu no Yuusha no Densetsu\n°Hataraku Maou-sama\n°Violet Evergarden\n°Hagure Yuusha no Aesthetica\n____________________________\nTop Anime dengan MC memiliki masa lalu yang gelap\n°Zankyou no Terror\n°Black Bullet\n°Jigoku Shoujo\n°Owari no Seraph\n°91 Days\n°Classroom of the Elite\n°Noragami\n____________________________\nTop anime dengan MC yang memiliki kekuatan khusus\n°Dakara Boku wa, H ga Dekinai\n°Yuragi-Sou no Yuuna-san\n°Inu X Boku SS\n°Charlotte\n____________________________\nTop Anime Cinta Obsesi \n°Amagami SS\n°Aho Girl\n°Kono Bijutsubu\n°Haiyore! Nyaruko-san\n°Shuffle!\n°Gekkan Shoujo Nozaki-kun\n°Renai Boukun\n°Mirai Nikki\n°Kawaikereba Hentai demo Suki ni Natte Kuremasu ka?\n____________________________\nTop anime romantis-komedi\n°Net-juu no Susume\n°Mikakunin de Shinkoukei\n°Chuunibyou demo Koi ga Shitai!\n°Servant x Service\n°Masamune-kun's Revenge\n°Gamers!\n°Nisekoi\n____________________________\nTop Anime dimana MC memiliki kekuatan Hewan Legendaris\n°Seikoku no Dragonar\n°Bungo Stray Dogs\n°High school DxD\n°Owari no Seraph\n____________________________\nTop Anime dimana MC OP dan tidak ada yang mengetahui\n°Chrome Shelled Regios\n°Tokyo Majin Gakuen Kenpuchou\n°Quanzhi Fashi\n°Rokudenashi Majutsu Koushitsu\n°Witch Craft Works\n°Mahouka Koukou no Rettousei\n°Rakudai Kishi no Cavalry\n____________________________\nTop Anime dengan MC OP\n°Phantom: Requiem for the Phantom\n°Divine Gate\n°Hitsugi no Chaika\n°Code: Breaker\n°Kiznaiver\n°Ansatsu koushitsu\n°Kara no Kyoukai\n____________________________\nTop Anime dimana MC nya Jenius/Cerdas/Ahli siasat\n°Nejimaki Seirei Senki: Tenkyou no Alderamin\n°Hyouka\n°Dr. Stone\n°Classroom of the Elite\n°No Game No Life\n°Death Note\n____________________________\nAnime dimana MC adalah murid pindahan yang OP\n°Hundred\n°Code: Breaker\n°Tokyo Majin Gakuen Kenpuchou\n°Chrome Shelled Regios\n°Kill la Kill\n°Mahouka Koukou no Rettousei\n____________________________\n\nanime Isekai (2019)\n°Tsuujou Kougeki ga Zentai Kougeki de Ni-kai Kougeki no - Okaasan wa Suki Desu ka?\n°Arifureta Shokugyo de Sekai Saikyou\n°Kenja no Mago\n°Maou-sama, Retry!\n°Watashi, Nouryoku wa Heikinchi de tte Yo ne!\n°Mairimashita! Iruma-kun\n°Honzuki no Gekokujou: Shisho ni Naru Tame ni Shudan wo\n°Choujin Koukousei-tachi wa Isekai demo Yoyuu de Ikinuku you Desu!\n°Shinchou Yuusha: Kono Yuusha ga Ore Tueee Kuseni Shinchou Sugiru`]
 					srn = await getBuffer(`https://telegra.ph/file/fac1d53fb914aadc4e73d.jpg`)
@@ -1231,26 +1227,26 @@ case 'ss': case 'ssweb':
 				case 'setname':
 					if (!isGroupAdmins) return reply('mung admin')
                 hexa.groupUpdateSubject(from, `${body.slice(9)}`)
-                hexa.sendMessage(from, '⟪ dadi ⟫ ganti jeneng Grup', text, {quoted: mek})
+                hexa.sendMessage(from, '⟪ SUKSES ⟫ mengganti nama grup', text, {quoted: mek})
 					break
 				case 'setdesc':
-					if (!isGroupAdmins) return reply('mung admin')
+					if (!isGroupAdmins) return reply('khusus admin')
                 hexa.groupUpdateDescription(from, `${body.slice(9)}`)
-                hexa.sendMessage(from, '⟪ SUKSES ⟫ ganti Desk Grup', text, {quoted: mek})
+                hexa.sendMessage(from, '⟪ SUKSES ⟫ mengganti Desk Grup', text, {quoted: mek})
 					break
 					case 'grup':
 					if (!isGroupAdmins) return reply('khusus admin')
 					if (args[0] === 'buka') {
-					    reply(`kebukak`)
+					    reply(`opened`)
 						hexa.groupSettingChange(from, GroupSettingChange.messageSend, false)
 					} else if (args[0] === 'tutup') {
-						reply(`ketutup`)
+						reply(`closed`)
 						hexa.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
 					break
 				case 'clone':
       if (!mek.key.fromMe) return reply('Levia☆tan')
-					if (args.length < 1) return reply(' *tag sing arep di clone!* ')
+					if (args.length < 1) return reply(' *tag yang mau di clone!* ')
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag cvk')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid[0]
 					let { jid, id, notify } = groupMembers.find(x => x.jid === mentioned)
@@ -1264,7 +1260,7 @@ case 'ss': case 'ssweb':
 					}
 					break
 				case 'leave': 
-			if (!mek.key.fromMe) return fakestatus('mung aku sing teyeng:v')
+			if (!mek.key.fromMe) return fakestatus('cuma aku yang bisa:v')
 			if (!isGroup) return reply(mess.only.group)
 				setTimeout( () => {
                       hexa.groupLeave (from) 
@@ -1276,63 +1272,63 @@ case 'ss': case 'ssweb':
                       break						
 			     	case 'kick':
 			if (!mek.key.fromMe)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('tag sing arep di kick')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('tag yang mau di kick')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `koe arep di kick :\n`
+							teks += `kamu akan di kick :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						hexa.groupRemove(from, mentioned)
 					} else {
-						mentions(`koe arep di kick @${mentioned[0].split('@')[0]} 🚮`, mentioned, true)
+						mentions(`kamu akan di kick @${mentioned[0].split('@')[0]} 🚮`, mentioned, true)
 						hexa.groupRemove(from, mentioned)
 					}
 					break
 				case 'add':
-					if (args.length < 1) return reply('arep nambaih sapa su?')
-					if (args[0].startsWith('08')) return reply('nganggo kode negara')
+					if (args.length < 1) return reply('mau nambahin siapa kak?')
+					if (args[0].startsWith('08')) return reply('pakai kode negara')
 					try {
 						num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 						hexa.groupAdd(from, [num])
 					} catch (e) {
 						console.log('Error :', e)
-						reply('Gagal nambahna,di privasi')
+						reply('Gagal menambahkan,di privasi')
 					}
 					break
  				case 'promote':
 			if (!mek.key.fromMe)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('tag sing arep di promote!')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('tag yang mau di promote!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `koe wes dadi admin grup:\n`
+							teks += `kamu telah menjadi admin grup:\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						hexa.groupMakeAdmin(from, mentioned)
 					} else {
-						mentions(`koe wes dadi admin grup @${mentioned[0].split('@')[0]}`, mentioned, true)
+						mentions(`kamu telah menjadi admin grup @${mentioned[0].split('@')[0]}`, mentioned, true)
 						hexa.groupMakeAdmin(from, mentioned)
 					}
 					break	
            case 'demote':
 			if (!mek.key.fromMe)
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('tag sing arep di demote!')
+					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('tag yang mau di demote!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
 						teks = ''
 						for (let _ of mentioned) {
-							teks += `koe di demote dadi member meneh :\n`
+							teks += `kamu akan di demote menjaadi member lagi :\n`
 							teks += `@_.split('@')[0]`
 						}
 						mentions(teks, mentioned, true)
 						hexa.groupDemoteAdmin(from, mentioned)
 					} else {
-						mentions(`@${mentioned[0].split('@')[0]} koe di demote dadi member meneh`, mentioned, true)
+						mentions(`@${mentioned[0].split('@')[0]} kamu akan di demote menjadi member lagi`, mentioned, true)
 						hexa.groupDemoteAdmin(from, mentioned)
 					}
 					break
@@ -1348,21 +1344,21 @@ case 'ss': case 'ssweb':
             hen = args[0]
             if (!q) return fakestatus('butuh link group')
             var codeInvite = hen.split('https://chat.whatsapp.com/')[1]
-            if (!codeInvite) return fakegroup ('link.e salah!')
+            if (!codeInvite) return fakegroup ('linknya salah!')
             var response = await hexa.acceptInvite(codeInvite)
             fakestatus('wes dadi')
             } catch {
-            fakegroup('LINK.e SALAH!')
+            fakegroup('LINKNYA SALAH!')
             }
             break
     case'twitter':
             if (!isUrl(args[0]) && !args[0].includes('twitter.com')) return reply(mess.Iv)
-            if (!q) return fakegroup('Link.e ndi su?')
+            if (!q) return fakegroup('Linknya mana kaka?')
             ten = args[0]
             var res = await twitterGetUrl(`${ten}`)
             .then(g => {
             ren = `${g.download[2].url}`
-            sendMediaURL(from,ren,'dadi')
+            sendMediaURL(from,ren,'succes')
             })
             break
     case 'runtime':
@@ -1455,7 +1451,7 @@ case 'ss': case 'ssweb':
             hexa.sendMessage(from, ini_buffer, video, options)
             fs.unlinkSync(file)
         } else{
-          reply(`reply gambar/sticker/audio/video karo tulisa  ${prefix}totag`)
+          reply(`reply gambar/sticker/audio/video dengan caption ${prefix}totag`)
         }
         break
     case 'tomp4':
@@ -1463,7 +1459,7 @@ case 'ss': case 'ssweb':
             ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             owgi = await hexa.downloadAndSaveMediaMessage(ger)
             webp2mp4File(owgi).then(res=>{
-            sendMediaURL(from,res.result,'dadi')
+            sendMediaURL(from,res.result,'succes')
             })
             }else {
             reply('reply stiker.e')
@@ -1511,7 +1507,7 @@ ${descOwner ? `*Desc diubah oleh* : @${descOwner.split('@')[0]}` : '*Desc diubah
              }
              break
 default:
-if (budy.startsWith('×'))
+if (budy.startsWith('x'))
 {
 try {
 return hexa.sendMessage(from, JSON.stringify(eval(budy.slice(2)),null,'\t'),text, {quoted: mek})
